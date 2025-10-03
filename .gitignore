@@ -1,0 +1,10 @@
+venv
+.DS_Store
+data/
+.env
+resources
+htmlcov/
+.coverage
+.idea/
+__pycache__/
+./**/.~lock.*

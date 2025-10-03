@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MONGO_DB_URI: mongodb://root:root@mongo:27017
+      MONGO_DB_NAME: mydatabase
+      JWT_SECRET: 06c78fca353683589933c3f67e46f05c2bd8aefdd93c9e29fbb1025aa1af36a8
+    ports:
+      - "5000:5000"
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - ../mongo/data:/data/db
+    ports:
+      - "27017:27017"
+
+  
